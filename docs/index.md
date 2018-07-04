@@ -15,18 +15,18 @@ professional portfolios.
 * Denis Gayvoronsky - Database Engineer 
 
 # Design Layout
-* Landing Page / Pro-Bono Projects Page
+##### Landing Page / Pro-Bono Projects Page
 ![Page 1](images/devup_pg1.png)
-* Open Projects Page
+##### Open Projects Page
 ![Page 2](images/devup_pg2.png)
-* About Us Page
+##### About Us Page
 ![Page 2](images/devup_pg3.png)
 
 # Project Plan
 
-* Kanban Board
+##### Kanban Board
 ![Page 2](images/kanban_board.png)
-* High Level Plan
+##### High Level Plan
 ```
 Sprint 0: Design Sprint to evolve idea and create backlog, produce first Mockups.
 Sprint 1: Groom backlog, research APIs required, design and deliver first iteration of backend systems (Node.js / MongoDB). Develop UI and finalize design.
