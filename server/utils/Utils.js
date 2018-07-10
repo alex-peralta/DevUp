@@ -4,52 +4,45 @@ var Project = require("../models/Project");
 
 module.exports = {
 	updateDb : function(req, res){
+    let counter = 0; 
 		Project.remove({}, function (err, rem) {
-
       // Get the website data
-      axios.get("https://www.medicalnewstoday.com/").then(function (response) {
+      for(let i = 1; i < 51; i++){
 
-        // Load into cheerio for scraping by element(s)
-        let $ = cheerio.load(response.data);
-        let counter = 0;
+        axios.get("https://www.freelancer.com/jobs/regions/"+i+"/").then(function (response) {
 
-        let content = $("li.written");
-
-        $("li.featured").each(function (i, element) {
-          content[content.length] = (this);
-          content.length = content.length+1;
-        });
-
-        $("li.knowledge").each(function (i, element) {
-          content[content.length] = (this);
-          content.length = content.length+1;
-        });
-
-        // Loop through all the results that have article.
-        content.each(function (i, element) {
-          let result = {};
-          result.link = "https://www.medicalnewstoday.com" + $(this).children().first().attr("href");
-          result.title = $(this).find("strong").text();
-          
-          result.summary = $(this).find("em").text();
-
-          
-          let duplicate = false;
+          // Load into cheerio for scraping by element(s)
+          let $ = cheerio.load(response.data);
           
 
-          // Create article only if not a duplicate and all three have values
-          if (!duplicate && result.title && result.link && result.summary) {
-            Project.create(result);
-            counter++;
-          }
+          let content = $("div.JobSearchCard-primary");
+          console.log(content.length);
+          // Loop through all the results that have project.
+          content.each(function (i, element) {
+            let result = {};
+            //result.link = "https://up-for-grabs.net/#/" + $(this).children().first().attr("href");
+            result.title = $(this).find("a.JobSearchCard-primary-heading-link").text();
+            
+            result.summary = $(this).find("p.JobSearchCard-primary-description").text();
+            result.link = "https://www.freelancer.com/jobs/regions" + $(this).find("a.JobSearchCard-primary-heading-link").attr("href");
+            
+            let duplicate = false;
+            
+
+            // Create project only if not a duplicate and all three have values
+            if (!duplicate && result.title && result.link && result.summary) {
+              Project.create(result);
+              counter++;
+            }
+
+          });
 
         });
-        // Return number of articles added
-        res.json({
-          count: counter
-        });
-
-      });
+      }
+    });
+    // Return number of articles added
+    res.json({
+      count: counter
     });
 	}
 };
