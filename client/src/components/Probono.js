@@ -20,10 +20,10 @@ class Probono extends Component {
     return (
       <div className="main-container">
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Dev Up</NavbarBrand>
+          <NavbarBrand href="/">DevUp</NavbarBrand>
           <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/Probono">Pro - Bono Projects</NavLink>
+                <NavLink href="/ProBono">ProBono Projects</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/Projects">Open Projects</NavLink>
