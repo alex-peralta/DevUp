@@ -1,3 +1,6 @@
+/*
+* This page will hold projects data
+*/
 import React, { Component } from "react";
 import {
   Collapse,
