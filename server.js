@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Serve up static assets if in production (running on Heroku)
+// Set up static assets if in production (running on Heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 } else {
