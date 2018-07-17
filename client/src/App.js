@@ -10,6 +10,12 @@ import UpdateProjects from "./components/UpdateProjects";
 const App = () =>
   <Router>
     <div>
+    	/* 
+    	 * The exact param disables the partial 
+    	 * matching for a route and makes sure 
+    	 * that it only returns the route if the 
+    	 * path is an EXACT match to the current url  
+    	*/
     	<Route exact path='/' component={Main} />
 	    <Route path='/About' component={About}/>
 	    <Route path='/Probono' component={Probono}/>
