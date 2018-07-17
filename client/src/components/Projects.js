@@ -2,6 +2,7 @@
 * This page will hold projects data
 */
 import React, { Component } from "react";
+import API from "../utils/api";
 import {
   Collapse,
   Navbar,
