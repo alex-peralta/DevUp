@@ -1,3 +1,6 @@
+/*
+* Static page loading About Us information
+*/
 import React, { Component } from "react";
 import {
   Collapse,
