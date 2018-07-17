@@ -1,5 +1,6 @@
 var Project = require("../models/Project");
 var Utils = require("../utils/Utils");
+var parser = require("../utils/parser");
 
 module.exports = {
   // this method handles finding all projects in the db
@@ -36,6 +37,6 @@ module.exports = {
   },
   update: function(req, res) {
     console.log("Updating projects in db");
-    Utils.updateDb(req, res);
+    parser.updateDb(req, res);
   }
 };
