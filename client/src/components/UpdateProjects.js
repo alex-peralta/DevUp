@@ -1,3 +1,7 @@
+/*
+* Utility page used by site admin.
+* This page used to load new progects into mongoDB
+*/
 import React, { Component } from "react";
 import API from "../utils/api";
 import {
