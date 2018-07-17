@@ -1,3 +1,6 @@
+/*
+*Utility file used for scrapping www.freelancer.com content into mongoDB
+*/
 var axios = require("axios");
 var cheerio = require("cheerio");
 var Project = require("../models/Project");
