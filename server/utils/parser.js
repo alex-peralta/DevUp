@@ -2,20 +2,13 @@
 var cheerio = require("cheerio");
 // Makes HTTP request for HTML page
 var request = require("request");
-var mongojs = require("mongojs");
 var Project = require("../models/Project");
 
 module.exports = {
   updateDb : function(req, res){
     Project.remove({}, function (err, rem) {
-      var databaseUrl = "devApp";
       var collections = ["projects"];
 
-      // Hook mongojs configuration to the db variable
-      var db = mongojs(databaseUrl, collections);
-      db.on("error", function(error) {
-        console.log("Database Error:", error);
-      });
 
       //------------------
       // Making a request for reddit's "webdev" board. The page's HTML is passed as the callback's third argument
@@ -59,42 +52,17 @@ module.exports = {
               note=$(element2).text();
           });
 
-          // In the currently selected element, look at its child elements (i.e., its a-tags),
-          // then save the values for any "href" attributes that the child elements may have
+          let result = {};
+          result.picture = picture;
+          result.title = title;
+          result.link = link;
+          result.category = category;
+          result.subtitle = subtitle;
+          result.duration = duration;
+          result.location = location;
+          result.note = note;
 
-
-          // Save these results in an object that we'll push into the results array we defined earlier
-          /*results.push({
-            picture: picture,
-            title: title,
-            link: link,
-            categry: category,
-            subtitle: subtitle,
-            duration: duration,
-            location: location,
-            note: note
-          });*/
-
-          db.projects.insert({
-            picture: picture,
-            title: title,
-            link: link,
-            category: category,
-            subtitle: subtitle,
-            duration: duration,
-            location: location,
-            note: note
-          },
-              function(err, inserted) {
-                if (err) {
-                  // Log the error if one is encountered during the query
-                  console.log(err);
-                }
-                else {
-                  // Otherwise, log the inserted data
-                  console.log(inserted);
-                }
-              });
+          Project.create(result);
         });
 
         // Log the results once you've looped through each of the elements found with cheerio
