@@ -15,7 +15,6 @@ class Probono extends Component {
   constructor(props) {
     super(props);
     this.state = { activeIndex: 0, saved: [] };
-  
 
   }
 
@@ -37,16 +36,18 @@ class Probono extends Component {
       return (
         <div>
           <a href={item.link} target="_blank">
-          <img src={item.picture} height="450px"/>
-          <p className="legend" style={{'font-size':'20px'}}>{item.title} </p>
+          <img src={item.picture} className="center col-md-4"/>
+          <p className="legend" style={{'font-size':'20px'},{'background-color':'#746f6f'}}>{item.title} </p>
           </a>
         </div>
       );
     });
     return(
-      <Carousel showThumbs={false} infiniteLoop centerMode centerSlidePercentage={50} emulateTouch>
-	        {slides}
-	    </Carousel>
+        <div className="justify-content-center col-md-12">
+          <Carousel showThumbs={false} infiniteLoop emulateTouch >
+                {slides}
+          </Carousel>
+        </div>
     );
   }
 
@@ -77,8 +78,6 @@ class Probono extends Component {
 				      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
 			      </div>
 			      {this.renderProjects()}
-
-			      
 
 		      </section>
 
