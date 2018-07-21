@@ -9,10 +9,10 @@ module.exports = {
     Project.remove({}, function (err, rem) {
       var collections = ["projects"];
 
-
+      for(let i = 1; i < 10; i++){
       //------------------
       // Making a request for reddit's "webdev" board. The page's HTML is passed as the callback's third argument
-      request("https://www.taprootplus.org/opportunities?utf8=%E2%9C%93&opportunity_keyword=Website&project_category_id=20&issue_area=", function(error, response, html) {
+      request("https://www.taprootplus.org/opportunities?utf8=%E2%9C%93&opportunity_keyword=&all=on&project_category_id=20&&page="+i, function(error, response, html) {
 
         // Load the HTML into cheerio and save it to a variable
         // '$' becomes a shorthand for cheerio's selector commands, much like jQuery's '$'
@@ -28,7 +28,9 @@ module.exports = {
         $("div.panel.grid-panel").each(function(i, element) {
            // console.log($(element).text());
           // Save the text of the element in a "title" variable
-          var picture = $(element).children("div.project-image").css("background-image").slice(5, -2).replace(/"/g, "");
+          var picture = $(element).children("div.project-image").css("background-image");
+          picture = picture.replace('url(\'','').replace('\')','');
+          picture = picture.replace('url(','').replace(')','');
           
            var link = $(element).find("a.project-preview-link").attr("href");
 
@@ -64,11 +66,12 @@ module.exports = {
 
           Project.create(result);
         });
-
-        // Log the results once you've looped through each of the elements found with cheerio
+                // Log the results once you've looped through each of the elements found with cheerio
         //console.log(results);
         console.log("----------- finished, go home");
       });
+      }
+
     });
   }
 };
