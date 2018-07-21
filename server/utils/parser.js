@@ -31,8 +31,12 @@ module.exports = {
           var picture = $(element).children("div.project-image").css("background-image");
           picture = picture.replace('url(\'','').replace('\')','');
           picture = picture.replace('url(','').replace(')','');
+
+
           
-           var link = $(element).find("a.project-preview-link").attr("href");
+           var link = "https://www.taprootplus.org" + $(element).find("a.project-preview-link").attr("href");
+           console.log(link);
+
 
             var category = $(element).find("span.label.secondary.project-category").text();
 

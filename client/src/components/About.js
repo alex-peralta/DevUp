@@ -3,17 +3,12 @@
 */
 import React, { Component } from "react";
 import {
-  Collapse,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  NavLink
+  } from 'reactstrap';
 
 
 class About extends Component {
@@ -23,7 +18,7 @@ class About extends Component {
         <div className="main-container">
 
             <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">DevUp</NavbarBrand>
+                <NavbarBrand>DevUp</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
                         <NavLink href="/ProBono">ProBono Projects</NavLink>
