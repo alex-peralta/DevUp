@@ -1,6 +1,6 @@
 node_modules
 build
-client/public/theme
+client/public/theme/
 .DS_Store
 .gitignore
 
