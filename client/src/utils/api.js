@@ -7,7 +7,7 @@ const api = {
     return axios.get("/api/update");
   },
   // Retrieves saved articles from the db
-  getArticle: function() {
+  getProjects: function() {
     return axios.get("/api/saved");
   },
   // Saves a new article to the db
