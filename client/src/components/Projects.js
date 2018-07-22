@@ -14,6 +14,45 @@ import {
 
 class Projects extends Component {
 
+	constructor(props) {
+    super(props);
+    this.state = { activeIndex: 0, saved: [] };
+
+  }
+
+  componentDidMount() {
+	  this.getSavedProjects()
+  }
+
+  getSavedProjects = () => {
+    API.getProjects()
+      .then((res) => {
+        this.setState({ saved: res.data });
+      });
+  }
+
+  renderProjects = () => {
+    let { activeIndex } = this.state;
+
+    let cards = this.state.saved.map((item) => {
+      return (
+      	<section>
+		      <img src={item.picture} width="80%" className="center"/>
+		      <h3><a href={item.link} target="_blank">{item.title}</a></h3>
+		      <h4>{item.subtitle}</h4>
+		      <p style={{'text-align':'left'}}><span className="icon fa-clock-o"></span> {item.duration}</p>
+		      <p style={{'text-align':'left'}}><span className="icon fa-globe"></span> {item.location}</p>
+		      <p style={{'text-align':'left'}}><span className="icon fa-user"></span> {item.note}</p>
+	      </section>
+      );
+    });
+    return(
+        <div className="items style1 medium onscroll-fade-in">
+                {cards}
+        </div>
+    );
+  }
+
   render() {
     return (
       <div className="main-container">
@@ -38,80 +77,8 @@ class Projects extends Component {
 			      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit
 				      amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus,
 				      pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
-			      <div className="items style1 medium onscroll-fade-in">
-				      <section>
-					      <span className="icon style2 major fa-diamond"></span>
-					      <h3>Lorem</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-save"></span>
-					      <h3>Ipsum</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-bar-chart"></span>
-					      <h3>Dolor</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-wifi"></span>
-					      <h3>Amet</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-cog"></span>
-					      <h3>Magna</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-paper-plane"></span>
-					      <h3>Tempus</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-desktop"></span>
-					      <h3>Aliquam</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-refresh"></span>
-					      <h3>Elit</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-hashtag"></span>
-					      <h3>Morbi</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-bolt"></span>
-					      <h3>Turpis</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-envelope"></span>
-					      <h3>Ultrices</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-				      <section>
-					      <span className="icon style2 major fa-leaf"></span>
-					      <h3>Risus</h3>
-					      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci
-						      amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
-				      </section>
-			      </div>
+				      {this.renderProjects()}
+			      
 		      </div>
 	      </section>
 
