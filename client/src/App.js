@@ -16,7 +16,7 @@ const App = () =>
     	 * that it only returns the route if the 
     	 * path is an EXACT match to the current url  
     	*/}
-    	<Route exact path='/' component={Main} />
+    	<Route exact path='/' component={Probono} />
 	    <Route path='/About' component={About}/>
 	    <Route path='/Probono' component={Probono}/>
 	    <Route path='/Projects' component={Projects}/>
