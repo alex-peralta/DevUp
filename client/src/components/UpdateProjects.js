@@ -15,11 +15,33 @@ import {
 
 class UpdateProjects extends Component {
 
-  update = () => {
-    return API.update().data;
+  constructor(props) {
+    super(props);
+    this.state = { saved: 0, updated:false };
+
   }
 
+  componentDidMount() {
+    this.update()
+  }
+
+  update = () => {
+    return API.update().then((res) => {
+        this.setState({ saved: res.data.count, updated:true });
+      });
+  }
+
+  
+
   render() {
+    const isUpdated = this.state.updated;
+    let label;
+
+    if (isUpdated) {
+      label = <div>Loaded {this.state.saved} projects</div>;
+    } else {
+      label = "Updaiting..."
+    }
     return (
       <div className="main-container">
         <Navbar color="light" light expand="md">
@@ -36,7 +58,7 @@ class UpdateProjects extends Component {
               </NavItem>
             </Nav>
         </Navbar>
-        <div>{this.update()}</div>
+        {label}
           <footer>
             <hr />
             <p className="pull-right">

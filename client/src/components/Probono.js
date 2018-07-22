@@ -35,8 +35,9 @@ class Probono extends Component {
     let slides = this.state.saved.map((item) => {
       return (
         <div>
-          <a href={item.link} target="_blank">
+          
           <img src={item.picture} className="center col-md-4"/>
+          <a href={item.link} target="_blank">
           <p className="legend" style={{'font-size':'20px'},{'background-color':'#746f6f'}}>{item.title} </p>
           </a>
         </div>
@@ -44,7 +45,7 @@ class Probono extends Component {
     });
     return(
         <div className="justify-content-center col-md-12">
-          <Carousel showThumbs={false} infiniteLoop emulateTouch >
+          <Carousel showThumbs={false} infiniteLoop emulateTouch useKeyboardArrows>
                 {slides}
           </Carousel>
         </div>
