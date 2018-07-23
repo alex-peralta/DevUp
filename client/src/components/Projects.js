@@ -27,7 +27,7 @@ class Projects extends Component {
         { name: 'Mobile development', id:'Mobile development' },
         { name: 'Website development', id: 'Website development' }
       ],
-      value:  '{ $exists: true }' 
+      value:  'All Projects' 
 
     };
 
@@ -68,9 +68,9 @@ class Projects extends Component {
 		      <img src={item.picture} width="80%" className="center"/>
 		      <h3><a href={item.link} target="_blank">{item.title}</a></h3>
 		      <h4>{item.subtitle}</h4>
-		      <p style={{'text-align':'left'}}><span className="icon fa-clock-o"></span> {item.duration}</p>
-		      <p style={{'text-align':'left'}}><span className="icon fa-globe"></span> {item.location}</p>
-		      <p style={{'text-align':'left'}}><span className="icon fa-user"></span> {item.note}</p>
+		      <p style={{'textAlign':'left'}}><span className="icon fa-clock-o"></span> {item.duration}</p>
+		      <p style={{'textAlign':'left'}}><span className="icon fa-globe"></span> {item.location}</p>
+		      <p style={{'textAlign':'left'}}><span className="icon fa-user"></span> {item.note}</p>
 	      </section>
       );
     });
@@ -82,9 +82,11 @@ class Projects extends Component {
   }
 
   render() {
+  	
   	let optionTemplate = this.state.values.map(v => (
-      <option style={{'font-weight':'bold'}} value={v.id}>{v.name}</option>
+      <option style={{'fontWeight':'bold'}} value={v.id}>{v.name}</option>
     ));
+
     return (
       <div className="main-container">
         <Navbar color="light" light expand="md">
@@ -101,7 +103,7 @@ class Projects extends Component {
               </NavItem>
             </Nav>
         </Navbar>
-        <label style={{'font-size':'18px','font-weight':'bold'}}>
+        <label style={{'fontSize':'18px','fontWeight':'bold'}}>
 	        Select Project Category:
 	        <select style={{'fontWeight':'bold'}} value={this.state.value} onChange={this.handleChange}>
 	          {optionTemplate}
