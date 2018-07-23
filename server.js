@@ -37,7 +37,7 @@ router.get("/api/saved", projectsController.find);
 // Save articles
 router.post("/api/saved", projectsController.insert);
 // delete saved articles
-router.delete("/api/saved/:id", projectsController.delete);
+router.get("/api/saved/:id", projectsController.findBy);
 // Send every other request to the React app
 router.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

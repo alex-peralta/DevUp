@@ -8,20 +8,48 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink } from 'reactstrap';
+  NavLink,
+} from 'reactstrap';
 
 
 
 class Projects extends Component {
 
+
+
 	constructor(props) {
     super(props);
-    this.state = { activeIndex: 0, saved: [] };
+    this.state = { activeIndex: 0, saved: [],
+    values: [
+        { name: 'All Projects', id: 'All Projects' },
+        { name: 'CRM', id: 'CRM' },
+        { name: 'Website design', id: 'Website design' },
+        { name: 'Mobile development', id:'Mobile development' },
+        { name: 'Website development', id: 'Website development' }
+      ],
+      value:  '{ $exists: true }' 
+
+    };
 
   }
 
   componentDidMount() {
 	  this.getSavedProjects()
+  }
+
+  handleChange = (event) => {
+  	this.setState({ value: event.target.value});
+  	if('All Projects' === event.target.value){
+  		API.getProjects()
+      .then((res) => {
+        this.setState({ saved: res.data });
+      });
+  	} else{
+  	API.getProjectsBy(event.target.value)
+  	 .then((res) => {
+        this.setState({ saved: res.data});
+      });
+  	}
   }
 
   getSavedProjects = () => {
@@ -54,6 +82,9 @@ class Projects extends Component {
   }
 
   render() {
+  	let optionTemplate = this.state.values.map(v => (
+      <option style={{'font-weight':'bold'}} value={v.id}>{v.name}</option>
+    ));
     return (
       <div className="main-container">
         <Navbar color="light" light expand="md">
@@ -70,13 +101,15 @@ class Projects extends Component {
               </NavItem>
             </Nav>
         </Navbar>
-
+        <label style={{'font-size':'18px','font-weight':'bold'}}>
+	        Select Project Category:
+	        <select style={{'fontWeight':'bold'}} value={this.state.value} onChange={this.handleChange}>
+	          {optionTemplate}
+	        </select>
+	      </label>
 	      <section className="wrapper style1 align-center">
 		      <div className="inner">
-			      <h2>Ipsum sed consequat</h2>
-			      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit
-				      amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus,
-				      pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+
 				      {this.renderProjects()}
 			      
 		      </div>

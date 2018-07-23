@@ -6,18 +6,15 @@ const api = {
     console.log("API update call");
     return axios.get("/api/update");
   },
-  // Retrieves saved articles from the db
+  // Retrieves saved projects from the db
   getProjects: function() {
     return axios.get("/api/saved");
   },
-  // Saves a new article to the db
-  saveArticle: function(articleObj) {
-    return axios.post("/api/saved", articleObj);
-  }/*,
-  // Deletes an article from the db
-  deleteArticle: function(id) {
-    return axios.delete("/api/saved/${id}");
-  }*/
+
+  getProjectsBy: function(category) {
+    return axios.get("/api/saved/"+category);
+  }
+  
 };
 
 export default api;

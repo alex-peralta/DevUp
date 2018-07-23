@@ -12,6 +12,14 @@ module.exports = {
       res.json(err);
     });
   },
+  findBy: function(req, res) {
+    console.log("Gathering saved " + req.params.id + " projects from the db");
+    Project.find({category : req.params.id }).then(function(doc) {
+      res.json(doc);
+    }).catch(function(err) {
+      res.json(err);
+    });
+  },
   // this method handles adding new project to the db
   insert: function(req, res) {
     console.log("Adding saved project to the db");
