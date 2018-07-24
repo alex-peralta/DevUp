@@ -26,10 +26,10 @@ class About extends Component {
                 <NavbarBrand>DevUp</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink href="/ProBono">ProBono Projects</NavLink>
+                        <NavLink href="/ProBono">ProBono Opportunities</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="/Projects">Open Projects</NavLink>
+                        <NavLink href="/Projects">Categories</NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink href="/About/">About Us</NavLink>
@@ -79,31 +79,6 @@ class About extends Component {
 		            </div>
 		            <div className="image">
 			            <img src={alex_peralta} alt="Image of Alexander Peralta" />
-		            </div>
-	            </section>
-
-	            <section className="wrapper style1 align-center">
-		            <div className="inner medium">
-			            <h2>Get in touch</h2>
-			            <form method="post" action="#">
-				            <div className="fields">
-					            <div className="field half">
-						            <label htmlFor="name">Name</label>
-						            <input type="text" name="name" id="name" value=""/>
-					            </div>
-					            <div className="field half">
-						            <label htmlFor="email">Email</label>
-						            <input type="email" name="email" id="email" value=""/>
-					            </div>
-					            <div className="field">
-						            <label htmlFor="message">Message</label>
-						            <textarea name="message" id="message" rows="6"></textarea>
-					            </div>
-				            </div>
-				            <ul className="actions special">
-					            <li><input type="submit" name="submit" id="submit" value="Send Message"/></li>
-				            </ul>
-			            </form>
 		            </div>
 	            </section>
 

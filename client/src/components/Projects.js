@@ -13,6 +13,8 @@ import {
 
 import '../App.css';
 
+import banner from '../images/banner.jpg';
+
 
 class Projects extends Component {
 
@@ -87,46 +89,49 @@ class Projects extends Component {
     ));
 
     return (
-      <div className="main-container">
+      <div id="wrapper" className="divided">
         <Navbar color="light" light expand="md">
           <NavbarBrand>DevUp</NavbarBrand>
           <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/ProBono">ProBono Projects</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/Projects">Open Projects</NavLink>
-              </NavItem>
-               <NavItem>
-                <NavLink href="/About/">About Us</NavLink>
-              </NavItem>
+	          <NavItem>
+		          <NavLink href="/ProBono">ProBono Opportunities</NavLink>
+	          </NavItem>
+	          <NavItem>
+		          <NavLink href="/Projects">Categories</NavLink>
+	          </NavItem>
+	          <NavItem>
+		          <NavLink href="/About/">About Us</NavLink>
+	          </NavItem>
             </Nav>
         </Navbar>
-        <label style={{'fontSize':'18px','fontWeight':'bold'}}>
-	        Select Project Category:
-	        <select style={{'fontWeight':'bold'}} value={this.state.value} onChange={this.handleChange}>
-	          {optionTemplate}
-	        </select>
-	      </label>
-	      <section className="wrapper style1 align-center">
-		      <div className="inner">
 
-				      {this.renderProjects()}
-			      
+        <section className="banner style5">
+	        <label className="content" style={{'fontSize':'18px','fontWeight':'bold'}}>
+		        Project Categories:
+		        <select style={{'fontWeight':'bold'}} value={this.state.value} onChange={this.handleChange}>
+		          {optionTemplate}
+		        </select>
+	        </label>
+	        <div className="image">
+		        <img src={banner} alt="Alternate text"/>
+	        </div>
+        </section>
+
+	      <section className="wrapper style2 align-center">
+		      <div className="inner">
+			      {this.renderProjects()}
 		      </div>
 	      </section>
 
 	      <footer className="wrapper style1 align-center">
 		      <div className="inner">
 			      <ul className="icons">
-				      <li><a href="#" className="icon style2 fa-twitter"><span className="label">Twitter</span></a></li>
-				      <li><a href="#" className="icon style2 fa-facebook"><span className="label">Facebook</span></a>
+				      <li><a href="https://alex-peralta.github.io/DevUp/" className="icon style2 fa-github" target="_blank"><span className="label">Github</span></a>
 				      </li>
-				      <li><a href="#" className="icon style2 fa-instagram"><span className="label">Instagram</span></a>
+				      <li><a href="https://www.linkedin.com/in/peraltasr/" className="icon style2 fa-linkedin" target="_blank"><span className="label">LinkedIn</span></a>
 				      </li>
-				      <li><a href="#" className="icon style2 fa-linkedin"><span className="label">LinkedIn</span></a>
+				      <li><a href="mailto:alex.peralta.sr@gmail.com" className="icon style2 fa-envelope" target="_blank"><span className="label">Email</span></a>
 				      </li>
-				      <li><a href="#" className="icon style2 fa-envelope"><span className="label">Email</span></a></li>
 			      </ul>
 			      <p>&copy; Copyright 2018 DevUp</p>
 		      </div>
