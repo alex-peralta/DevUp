@@ -38,10 +38,13 @@ class About extends Component {
 
 	            <section className="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
 		            <div className="content">
-			            <h2>Magna etiam feugiat</h2>
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+			            <h2>Nelly Ackerman</h2>
+			            <p>My name is Nelly Ackerman. I'm coming from another professional background in health care, i've been a registared nurse for 15 years.
+				            I obtained my Bachelor degree in nursing in 2003 and since then i'm working in the medical field.
+				            For the first 10 years, i've worked in Emergency Room at the big Trauma Center hospital. In 2012 i've obtained my Master in nursing sience and moved on. For the 5 last years i've been working in surgical services post op care unit at Northside Hospital.
+				            My future goal is to stay in Healthcare field, and work in nursing informatics.</p>
 			            <ul className="actions stacked">
-				            <li><a href="#" className="button">Learn More</a></li>
+				            <li><a href="https://na995909.github.io/Basic-Portfolio/" target="_blank" className="button">Learn More</a></li>
 			            </ul>
 		            </div>
 		            <div className="image">
@@ -51,10 +54,10 @@ class About extends Component {
 
 	            <section className="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 		            <div className="content">
-			            <h2>Tempus adipiscing</h2>
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+			            <h2>Denis Gayvoronsky</h2>
+			            <p>My name is Denis Gayvoronsky. I have Bachelor degree in financing from Ukraine University. I moved to United states in 2007, since then i've been working as a maintanence engineer in hospital settings. Even though i'm coming from another background, i've always wanted to dedicate my professional life to computer technologies, since i find this field very facinating, very advanced, and for these reasons i've signed up for the coding course in GT bootcamp.</p>
 			            <ul className="actions stacked">
-				            <li><a href="#" className="button">Learn More</a></li>
+				            <li><a href="https://deniskag.github.io/Basic-Portfolio/" target="_blank" className="button">Learn More</a></li>
 			            </ul>
 		            </div>
 		            <div className="image">
