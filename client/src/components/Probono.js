@@ -78,9 +78,12 @@ class Probono extends Component {
 
 		      <section className="banner style5">
 			      <div className="content">
-				      <h2><b>Lend</b> a hand..., and <b>gain</b> experience...</h2>
+				      <header>
+				      <h1>DevUp</h1>
+				      <h3><b>Lend</b> a hand..., and <b>gain</b> experience...</h3>
 				      <p><i><b>Many</b></i> Nonprofits need the talent you have to offer, but they have limited finances. <i><b>Probono</b></i> is a way of <em>paying your talents forward</em> while helping those who <em>meet the needs of others</em>. <i><b>What if</b></i> you could help improve
 					      the world, <i><b>one line of code at a time</b></i>, would you take that opportunity?</p>
+				      </header>
 				      {this.renderProjects()}
 			      </div>
 			      <div className="image">
