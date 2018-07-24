@@ -11,6 +11,9 @@ import {
   } from 'reactstrap';
 
 import '../App.css';
+import nelly_ackerman from '../images/nelly_ackerman.jpeg';
+import denis_gayvoronsky from '../images/denis_gayvoronsky.jpeg';
+import alex_peralta from '../images/alex_peralta.jpeg';
 
 
 class About extends Component {
@@ -48,7 +51,7 @@ class About extends Component {
 			            </ul>
 		            </div>
 		            <div className="image">
-			            <img src="images/spotlight01.jpg" alt="" />
+			            <img src={nelly_ackerman} alt="Image of Nelly Ackerman" />
 		            </div>
 	            </section>
 
@@ -61,20 +64,21 @@ class About extends Component {
 			            </ul>
 		            </div>
 		            <div className="image">
-			            <img src="images/spotlight02.jpg" alt="" />
+			            <img src={denis_gayvoronsky} alt="Image of Denis Gayvoronsky" />
 		            </div>
 	            </section>
 
 	            <section className="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
 		            <div className="content">
-			            <h2>Pharetra etiam nulla</h2>
-			            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
+			            <h2>Alexander Peralta</h2>
+			            <p>I am a Software Engineering enthusiast, a Servant Leader, and an aspiring Entrepreneur. I have been designing, developing, and supporting Information Technology systems since 1999. I have extensive experience leading teams which design and support Web-Scale systems.
+				            As a practicing Scrum Master, I have leveraged the Scrum Framework to help teams transform their delivery methods and improve their efficiencies.</p>
 			            <ul className="actions stacked">
-				            <li><a href="#" className="button">Learn More</a></li>
+				            <li><a href="https://alex-peralta.github.io/Responsive-Portfolio/" target="_blank" className="button">Learn More</a></li>
 			            </ul>
 		            </div>
 		            <div className="image">
-			            <img src="images/spotlight03.jpg" alt="" />
+			            <img src={alex_peralta} alt="Image of Alexander Peralta" />
 		            </div>
 	            </section>
 
@@ -100,22 +104,17 @@ class About extends Component {
 					            <li><input type="submit" name="submit" id="submit" value="Send Message"/></li>
 				            </ul>
 			            </form>
-
 		            </div>
 	            </section>
 
 	            <footer className="wrapper style1 align-center">
 		            <div className="inner">
 			            <ul className="icons">
-				            <li><a href="#" className="icon style2 fa-twitter"><span
-					            className="label">Twitter</span></a></li>
-				            <li><a href="#" className="icon style2 fa-facebook"><span className="label">Facebook</span></a>
+				            <li><a href="https://alex-peralta.github.io/DevUp/" className="icon style2 fa-github" target="_blank"><span className="label">Github</span></a>
 				            </li>
-				            <li><a href="#" className="icon style2 fa-instagram"><span
-					            className="label">Instagram</span></a></li>
-				            <li><a href="#" className="icon style2 fa-linkedin"><span className="label">LinkedIn</span></a>
+				            <li><a href="https://www.linkedin.com/in/peraltasr/" className="icon style2 fa-linkedin" target="_blank"><span className="label">LinkedIn</span></a>
 				            </li>
-				            <li><a href="#" className="icon style2 fa-envelope"><span className="label">Email</span></a>
+				            <li><a href="mailto:alex.peralta.sr@gmail.com" className="icon style2 fa-envelope" target="_blank"><span className="label">Email</span></a>
 				            </li>
 			            </ul>
 			            <p>&copy; Copyright 2018 DevUp</p>
