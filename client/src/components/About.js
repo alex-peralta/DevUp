@@ -41,7 +41,7 @@ class About extends Component {
 
             <div id="wrapper" className="divided">
 
-		            <section className="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in color2" id="first">
+		            <section className="spotlight style2 orient-right content-align-left image-position-center onscroll-image-fade-in color2" id="first">
 			            <div className="content">
 				            <h2>Nelly Ackerman</h2>
 				            <p>My name is Nelly Ackerman. I'm coming from another professional background in health care, i've been a registared nurse for 15 years.
@@ -57,7 +57,7 @@ class About extends Component {
 			            </div>
 		            </section>
 
-		            <section className="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in color6">
+		            <section className="spotlight style2 orient-left content-align-left image-position-center onscroll-image-fade-in color6">
 			            <div className="content">
 				            <h2>Denis Gayvoronsky</h2>
 				            <p>My name is Denis Gayvoronsky. I have Bachelor degree in financing from Ukraine University. I moved to United states in 2007, since then i've been working as a maintanence engineer in hospital settings. Even though i'm coming from another background, i've always wanted to dedicate my professional life to computer technologies, since i find this field very facinating, very advanced, and for these reasons i've signed up for the coding course in GT bootcamp.</p>
@@ -70,7 +70,7 @@ class About extends Component {
 			            </div>
 		            </section>
 
-		            <section className="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in color5">
+		            <section className="spotlight style2 orient-right content-align-left image-position-center onscroll-image-fade-in color5">
 			            <div className="content">
 				            <h2>Alexander Peralta</h2>
 				            <p>I am a Software Engineering enthusiast, a Servant Leader, and an aspiring Entrepreneur. I have been designing, developing, and supporting Information Technology systems since 1999. I have extensive experience leading teams which design and support Web-Scale systems.
