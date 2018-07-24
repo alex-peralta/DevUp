@@ -10,6 +10,7 @@ import {
 
 import '../App.css';
 import logo from '../images/change.png';
+import banner from '../images/banner.jpg';
 
 class Probono extends Component {
 
@@ -37,7 +38,7 @@ class Probono extends Component {
       return (
         <div>
           
-          <img src={item.picture} className="center col-md-4"/>
+          <img src={item.picture} className="content-align-center col-md-4"/>
           <a href={item.link} target="_blank">
           <p className="legend" style={{'font-size':'20px'},{'background-color':'#746f6f'}}>{item.title} </p>
           </a>
@@ -76,13 +77,16 @@ class Probono extends Component {
         
 	      <div id="wrapper" className="divided">
 
-		      <section className="wrapper style1 align-center">
-			      <div className="inner">
-				      <h2>Lend a hand, and gain experience...</h2>
-				      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+		      <section className="banner style5">
+			      <div className="content">
+				      <h2><b>Lend</b> a hand..., and <b>gain</b> experience...</h2>
+				      <p><i><b>Many</b></i> Nonprofits need the talent you have to offer, but they have limited finances. <i><b>Probono</b></i> is a way of <em>paying your talents forward</em> while helping those who <em>meet the needs of others</em>. <i><b>What if</b></i> you could help improve
+					      the world, <i><b>one line of code at a time</b></i>, would you take that opportunity?</p>
+				      {this.renderProjects()}
 			      </div>
-			      {this.renderProjects()}
-
+			      <div className="image">
+				      <img src={banner} alt="Alternate text"/>
+			      </div>
 		      </section>
 
 		      <footer className="wrapper style1 align-center">
