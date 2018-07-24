@@ -9,6 +9,7 @@ import {
   NavLink} from 'reactstrap';
 
 import '../App.css';
+import logo from '../images/change.png';
 
 class Probono extends Component {
 
@@ -56,7 +57,9 @@ class Probono extends Component {
     return (
       <div className="main-container">
         <Navbar color="light" light expand="md">
-          <NavbarBrand>DevUp</NavbarBrand>
+          <NavbarBrand>
+	          <img src={logo} />
+          </NavbarBrand>
           <Nav className="ml-auto" navbar>
 	          <NavItem>
 		          <NavLink href="/ProBono">ProBono Opportunities</NavLink>
@@ -93,6 +96,7 @@ class Probono extends Component {
 					      </li>
 				      </ul>
 				      <p>&copy; Copyright 2018 DevUp</p>
+				      <div>Icons made by <a href="https://www.flaticon.com/authors/geotatah" title="geotatah">geotatah</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 			      </div>
 		      </footer>
 	      </div>
