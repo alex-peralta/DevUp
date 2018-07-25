@@ -14,16 +14,19 @@ There are many Non-Profit organizations who are in need of some level of applica
 Navigate to [DevUp](https://devup.herokuapp.com/) in a browser. Site URL:
 ```
 https://devup.herokuapp.com/
+```
 
-Fork us on Github
-
+Or fork us on Github to run locally:
+```
 cd DevUp
 
 yarn install
 
 yarn start
 
-http://localhost:3000/UpdateProjects
+http://localhost:3000/UpdateProjects -- To Load Data
+
+http://localhost:3000
 
 ```
 
