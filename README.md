@@ -23,7 +23,7 @@ yarn install
 
 yarn start
 
-http://localhost:3000/UpdateProjects -- To Load Data
+http://localhost:3000/admin/UpdateProjects -- To Load Data
 
 http://localhost:3000
 
