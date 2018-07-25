@@ -1,8 +1,8 @@
 # DevUp
 
-[DevUp Site](https://devup.herokuapp.com/) `https://devup.herokuapp.com/`
-
 DevUp is for the creative, and curious, looking to build up their dev portfolios.
+
+[DevUp Site](https://devup.herokuapp.com/) `https://devup.herokuapp.com/`
 
 ## Motivation
 
